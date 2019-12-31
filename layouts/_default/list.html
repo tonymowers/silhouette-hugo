@@ -81,6 +81,7 @@
   <div class="container mt-4 mb-4 recent-posts">
       {{ $pages := .Pages }}
       {{ if .IsHome }}
+      {{ .Content }}
       {{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
       {{ end }}
       {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) 10 }}
